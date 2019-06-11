@@ -26,25 +26,30 @@ const onRemoveAll = () => {
 
 const appRoot = document.getElementById('app')
 
-
+const numbers = [55, 101, 1000]
 
 const render = () => {
 	const template = (
 		<div>
-			<h1 id="testID">{app.title}</h1>
+			<h1>{app.title}</h1>
 			{app.subtitle && <p>{app.subtitle}</p>}
-			{(app.options && app.options.length > 0) ? 
-				<p>Here are your options <br></br>
-					{app.options}
-				</p> : <p>No Options</p>}
-				<p>{app.options.length}</p>
+			<p>{app.options.length > 0 ? 'Here are your options' : 'No Options'}</p>
+			<p>{app.options.length}</p>
 
-				<button onClick={onRemoveAll}>Remove All</button>
+			<button onClick={onRemoveAll}>Remove All</button>
 
-				<form onSubmit={onFormSubmit}>
-					<input type="text" name="option"></input>
-					<button>Add Option</button>
-				</form>
+			<ol>
+				{
+					app.options.map((option) => {
+						return <li key={option}>{option}</li>
+					})
+				}
+			</ol>
+
+			<form onSubmit={onFormSubmit}>
+				<input type="text" name="option"></input>
+				<button>Add Option</button>
+			</form>
 		</div>
 	)
 
