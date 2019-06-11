@@ -17,40 +17,5 @@ const template = (
 </div>
 )
 
-let count = 0
-
-const addOne = () => {
-	count++
-	// console.log('addOne', count)
-	renderCounter()
-}
-
-const removeOne = () => {
-	count--
-	renderCounter()
-	// console.log('removeOne')
-}
-
-const reset = () => {
-	count = 0
-	renderCounter()
-	// console.log('reset')
-}
-
 const appRoot = document.getElementById('app')
 
-const renderCounter = () => {
-	const templateTwo = (
-		<div> 
-			<h1>Count: {count}</h1>
-	
-			<button onClick={addOne}>+1</button>
-			<button onClick={removeOne}>-1</button>
-			<button onClick={reset}>Reset</button>
-		</div>
-	)
-
-	ReactDOM.render(templateTwo, appRoot)
-}
-
-renderCounter()
