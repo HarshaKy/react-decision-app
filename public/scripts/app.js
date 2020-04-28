@@ -1,9 +1,12 @@
-console.log('app is running')
+'use strict';
 
-var template = React.createElement("h1", {
-	id: "someid"
-  }, "Something New");
+console.log('app is running');
 
-var appRoot = document.getElementById('app')
+var template = React.createElement(
+  'h1',
+  { id: 'someid' },
+  'Reality is often disappointing!'
+);
+var appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot)
+ReactDOM.render(template, appRoot);
