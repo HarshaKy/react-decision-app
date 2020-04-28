@@ -15,7 +15,6 @@ var onFormSubmit = function onFormSubmit(e) {
 
 	if (option) {
 		app.options.push(option);
-		console.log(app.options);
 		e.target.elements.option.value = '';
 
 		renderApp();
@@ -25,6 +24,13 @@ var onFormSubmit = function onFormSubmit(e) {
 var removeAll = function removeAll() {
 	app.options = [];
 	renderApp();
+};
+
+var onMakeDecision = function onMakeDecision() {
+	var randomNum = Math.floor(Math.random() * app.options.length);
+	var option = app.options[randomNum];
+
+	alert(option);
 };
 
 var appRoot = document.getElementById('app');
@@ -53,9 +59,9 @@ var renderApp = function renderApp() {
 			"No options"
 		),
 		React.createElement(
-			"p",
-			null,
-			app.options.length
+			"button",
+			{ disabled: app.options.length === 0, onClick: onMakeDecision },
+			"What should I do?"
 		),
 		React.createElement(
 			"button",
