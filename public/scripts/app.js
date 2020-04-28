@@ -36,6 +36,14 @@ var template = React.createElement(
 	)
 );
 
+var getLocation = function getLocation(location) {
+	if (location) {
+		return location;
+	}
+
+	return 'Unkown';
+};
+
 var user = {
 	name: "Harsha K Y",
 	age: 23,
@@ -60,10 +68,10 @@ var templateTwo = React.createElement(
 		"p",
 		null,
 		"Location: ",
-		user.location
+		getLocation(user.location)
 	)
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
