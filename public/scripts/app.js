@@ -47,14 +47,12 @@ var template = React.createElement(
 );
 
 var getLocation = function getLocation(location) {
-	if (location) {
-		return React.createElement(
-			"p",
-			null,
-			"Location: ",
-			location
-		);
-	}
+	return location ? React.createElement(
+		"p",
+		null,
+		"Location: ",
+		location
+	) : undefined;
 };
 
 var user = {
@@ -82,4 +80,4 @@ var templateTwo = React.createElement(
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);

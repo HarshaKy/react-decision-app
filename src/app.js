@@ -6,7 +6,7 @@ const app = {
 	options: ['One', 'Two']
 }
 
-var template = (
+const template = (
 	<div>
 		<h1 id="someid">{app.title}</h1>
 		{app.subtitle && <p>{app.subtitle}</p>}
@@ -18,19 +18,15 @@ var template = (
 	</div>
 )
 
-const getLocation = (location) => {
-	if (location) {
-		return <p>Location: {location}</p>
-	}
-}
+const getLocation = (location) => location ? <p>Location: {location}</p> : undefined
 
-var user = {
+const user = {
 	name: "Harsha K Y",
 	age: 23,
 	location: "Bangalore"
 }
 
-var templateTwo = (
+const templateTwo = (
 	<div>
 		<h1>{user.name ? user.name : 'Anonymous'}</h1>
 		{(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
@@ -38,6 +34,6 @@ var templateTwo = (
 	</div>
 )
 
-var appRoot = document.getElementById('app')
+const appRoot = document.getElementById('app')
 
-ReactDOM.render(template, appRoot)
+ReactDOM.render(templateTwo, appRoot)
