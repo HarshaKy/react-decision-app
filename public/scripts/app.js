@@ -1,56 +1,69 @@
-'use strict';
+"use strict";
 
 console.log('app is running');
 
+var app = {
+	title: "Indecision App",
+	subtitle: "Put your life in the hands of a computer!"
+};
+
 var template = React.createElement(
-	'div',
+	"div",
 	null,
 	React.createElement(
-		'h1',
-		{ id: 'someid' },
-		'Reality is often disappointing!'
+		"h1",
+		{ id: "someid" },
+		app.title
 	),
 	React.createElement(
-		'p',
+		"p",
 		null,
-		'Some info'
+		app.subtitle
 	),
 	React.createElement(
-		'ol',
+		"ol",
 		null,
 		React.createElement(
-			'li',
+			"li",
 			null,
-			'Item 1'
+			"Item 1"
 		),
 		React.createElement(
-			'li',
+			"li",
 			null,
-			'Item 2'
+			"Item 2"
 		)
 	)
 );
 
+var user = {
+	name: "Harsha K Y",
+	age: 23,
+	location: "Bangalore"
+};
+
 var templateTwo = React.createElement(
-	'div',
+	"div",
 	null,
 	React.createElement(
-		'h1',
+		"h1",
 		null,
-		'Harsha KY'
+		user.name
 	),
 	React.createElement(
-		'p',
+		"p",
 		null,
-		'Age: 23'
+		"Age: ",
+		user.age
 	),
 	React.createElement(
-		'p',
+		"p",
 		null,
-		'Location: Bangalore'
+		"Location: ",
+		user.location
 	)
 );
 
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
