@@ -75,7 +75,8 @@ var IndecisionApp = function (_React$Component) {
 				}),
 				React.createElement(Options, {
 					options: this.state.options,
-					handleDeleteOptions: this.handleDeleteOptions
+					handleDeleteOptions: this.handleDeleteOptions,
+					hasOptions: this.state.options.length > 0
 				}),
 				React.createElement(AddOption, {
 					handleAddOption: this.handleAddOption
@@ -169,7 +170,10 @@ var Options = function (_React$Component4) {
 				}),
 				React.createElement(
 					'button',
-					{ onClick: this.props.handleDeleteOptions },
+					{
+						onClick: this.props.handleDeleteOptions,
+						disabled: !this.props.hasOptions
+					},
 					'Remove All'
 				)
 			);
@@ -260,4 +264,6 @@ var AddOption = function (_React$Component6) {
 	return AddOption;
 }(React.Component);
 
-ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));
+var appRoot = document.getElementById('app');
+
+ReactDOM.render(React.createElement(IndecisionApp, null), appRoot);

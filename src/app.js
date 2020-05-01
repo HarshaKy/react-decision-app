@@ -56,6 +56,7 @@ class IndecisionApp extends React.Component {
 				<Options 
 					options={this.state.options}
 					handleDeleteOptions={this.handleDeleteOptions}
+					hasOptions={this.state.options.length > 0} 
 				/>
 				<AddOption 
 					handleAddOption = {this.handleAddOption}
@@ -101,7 +102,12 @@ class Options extends React.Component {
 					this.props.options.map((option) => <Option key={option} optionText={option} />)
 				}
 
-				<button onClick={this.props.handleDeleteOptions}>Remove All</button>
+				<button 
+					onClick={this.props.handleDeleteOptions}
+					disabled={!this.props.hasOptions}
+				>
+					Remove All
+				</button>
 			</div>
 		)
 	}
@@ -157,4 +163,6 @@ class AddOption extends React.Component {
 	}
 }
 
-ReactDOM.render(<IndecisionApp />, document.getElementById('app'))
+const appRoot = document.getElementById('app')
+
+ReactDOM.render(<IndecisionApp />, appRoot)
