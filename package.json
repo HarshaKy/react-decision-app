@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start-server": "live-server public",
-    "start": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch",
-    "start-counter": "babel extras/counter.js --out-file=public/scripts/app.js --presets=env,react --watch"
+    "build": "webpack --watch",
+    "babel-build": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch",
+    "babel-build-counter": "babel extras/counter.js --out-file=public/scripts/app.js --presets=env,react --watch"
   },
   "repository": {
     "type": "git",
@@ -20,10 +21,13 @@
   "homepage": "https://github.com/HarshaKy/react-decision-app#readme",
   "dependencies": {
     "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1"
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^4.43.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "chokidar": "^3.4.0"
+    "chokidar": "^3.4.0",
+    "live-server": "^1.2.1",
+    "webpack-cli": "^3.3.12"
   }
 }
